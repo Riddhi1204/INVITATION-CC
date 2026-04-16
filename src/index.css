@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #e2e8f0;
+  background: #05070f;
+  overflow: hidden;
+  cursor: none;
+}
+
+.ribbon-shell {
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(159, 18, 57, 0.4), rgba(251, 113, 133, 0.35), rgba(159, 18, 57, 0.4));
+  filter: blur(1.5px);
+}
+
+.spotlight {
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(216, 180, 254, 0.4) 0%, rgba(56, 189, 248, 0.15) 30%, rgba(0, 0, 0, 0) 65%);
+  filter: blur(25px);
+}
+
+.confetti-piece {
+  position: absolute;
+  display: inline-block;
+  border-radius: 2px;
+  opacity: 0;
+  animation-name: confettiFall;
+  animation-timing-function: cubic-bezier(0.21, 0.7, 0.22, 0.99);
+  animation-fill-mode: forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(calc((var(--dx, 0) + 18) * 1px), 260px, 0) rotate(220deg) scale(0.85);
+    opacity: 0;
+  }
+}
