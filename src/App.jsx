@@ -417,6 +417,10 @@ function App() {
 
   return (
     <main className={`relative min-h-screen bg-[#05070f] text-white font-[Inter,sans-serif] ${!isCutState ? 'cut-active' : ''}`}>
+      <div className="fixed left-6 top-5 z-40 rounded-xl border border-cyan-300/30 bg-[#070b24]/75 p-1.5 shadow-[0_10px_28px_rgba(0,0,0,0.45)] backdrop-blur-sm">
+        <img src="/sbu-logo.png" alt="SBU logo" className="h-14 w-14 rounded-md object-contain" />
+      </div>
+
       <div className="pointer-events-none fixed inset-0 z-0 opacity-65">
         <Canvas camera={{ position: [0, 0, 6.8], fov: 50 }}>
           <AnimatedRings />
@@ -545,7 +549,7 @@ function App() {
             <div className="pointer-events-none absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-r from-indigo-500/35 via-cyan-500/30 to-purple-500/35 blur-3xl" />
             <article
               ref={detailsCardRef}
-              className="rounded-2xl border border-white/10 bg-white/10 p-8 md:p-10 shadow-[0_25px_90px_rgba(0,0,0,0.68),0_0_40px_rgba(56,189,248,0.14)] backdrop-blur-lg transition duration-300 hover:shadow-[0_32px_110px_rgba(0,0,0,0.75),0_0_52px_rgba(99,102,241,0.22)]"
+              className="rounded-2xl border border-indigo-300/20 bg-[#070b24]/70 p-8 md:p-10 shadow-[0_25px_90px_rgba(0,0,0,0.68),0_0_40px_rgba(56,189,248,0.14)] backdrop-blur-lg transition duration-300 hover:shadow-[0_32px_110px_rgba(0,0,0,0.75),0_0_52px_rgba(99,102,241,0.22)]"
             >
               <div className="flex flex-col items-center text-center gap-8">
                 <div className="reveal-item flex flex-col items-center gap-2">
@@ -624,7 +628,6 @@ function App() {
                 </p>
               </div>
               <div className="relative mt-12 grid gap-10 md:grid-cols-2 md:gap-16">
-                <div className="pointer-events-none absolute left-1/2 top-6 hidden h-[1px] w-[56%] -translate-x-1/2 bg-gradient-to-r from-cyan-400/30 via-indigo-300/60 to-cyan-400/30 md:block" />
                 <div className="timeline-item flex flex-col items-center rounded-xl border border-transparent p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/5 hover:shadow-[0_16px_38px_rgba(15,23,42,0.62),0_0_24px_rgba(56,189,248,0.2)]">
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-cyan-300/50 bg-indigo-500/30 text-xl font-bold text-white shadow-[0_0_28px_rgba(99,102,241,0.6)]">1</div>
                   <h4 className="text-xl font-semibold text-white">Round 1 - MCQ Sprint</h4>
