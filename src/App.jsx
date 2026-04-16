@@ -483,10 +483,10 @@ function App() {
 
           {showLandingContent && (
             <div className="flex flex-col items-center justify-center gap-6 text-center">
-              <h1 className="max-w-4xl bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-5xl font-extrabold text-transparent drop-shadow-[0_0_25px_rgba(59,130,246,0.6)] md:text-6xl">
+              <h1 className="max-w-4xl bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text font-[Poppins,sans-serif] text-5xl font-extrabold text-transparent drop-shadow-[0_0_25px_rgba(59,130,246,0.6)] md:text-6xl">
                 SBU CODING CHALLENGE
               </h1>
-              <p className="text-2xl font-semibold tracking-wide text-gray-300 md:text-3xl">
+              <p className="font-[Poppins,sans-serif] text-2xl font-semibold tracking-wide text-cyan-100 md:text-3xl">
                 Problem Solving Edition
               </p>
               <p className="max-w-xl text-base text-gray-300">
@@ -524,15 +524,15 @@ function App() {
             ref={messageRef}
             className="fixed left-1/2 top-1/2 z-30 flex w-[min(860px,90vw)] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-4 text-center text-slate-200 opacity-0"
           >
-            <p className="message-line text-xs uppercase tracking-widest text-gray-400">Respected</p>
-            <p className="message-line bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-3xl font-semibold text-transparent drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] md:text-4xl">
-              Director General, Prof. Gopal Pathak
+            <p className="message-line text-xs uppercase tracking-[0.34em] text-cyan-200/80">Respected</p>
+            <p className="message-line bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.55)] md:text-4xl">
+              Director General, Prof. Gopal Pathak Sir
             </p>
-            <p className="message-line text-lg text-slate-400">&</p>
-            <p className="message-line bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-3xl font-semibold text-transparent drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] md:text-4xl">
-              Vice Chancellor, Prof. C. Jeganathan
+            <p className="message-line text-lg text-indigo-200/70">&</p>
+            <p className="message-line bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.55)] md:text-4xl">
+              Vice Chancellor, Prof. C. Jeganathan Sir
             </p>
-            <p className="message-line mt-2 max-w-xl text-base leading-relaxed text-gray-300">
+            <p className="message-line mt-2 max-w-xl text-base leading-relaxed text-slate-300">
               With great respect, we invite you to inaugurate our Coding Club event and inspire
               the next generation of tech enthusiasts.
             </p>
@@ -545,19 +545,19 @@ function App() {
             <div className="pointer-events-none absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-r from-indigo-500/35 via-cyan-500/30 to-purple-500/35 blur-3xl" />
             <article
               ref={detailsCardRef}
-              className="rounded-2xl border border-white/10 bg-white/10 p-8 md:p-10 shadow-[0_20px_80px_rgba(0,0,0,0.6)] backdrop-blur-lg"
+              className="rounded-2xl border border-white/10 bg-white/10 p-8 md:p-10 shadow-[0_25px_90px_rgba(0,0,0,0.68),0_0_40px_rgba(56,189,248,0.14)] backdrop-blur-lg transition duration-300 hover:shadow-[0_32px_110px_rgba(0,0,0,0.75),0_0_52px_rgba(99,102,241,0.22)]"
             >
               <div className="flex flex-col items-center text-center gap-8">
                 <div className="reveal-item flex flex-col items-center gap-2">
-                  <p className="text-xs uppercase tracking-[0.34em] text-gray-400">Event Details</p>
-                  <h2 className="max-w-2xl text-3xl font-bold leading-tight text-white md:text-4xl">
+                  <p className="text-xs uppercase tracking-[0.34em] text-cyan-200/80">Event Details</p>
+                  <h2 className="max-w-2xl bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-bold leading-tight text-transparent md:text-4xl">
                     Invitation Overview
                   </h2>
                   <p className="text-base text-gray-300">Everything appears progressively as you scroll.</p>
                 </div>
 
                 <div ref={detailsItemsWrapRef} className="grid w-full max-w-3xl gap-4 md:grid-cols-2">
-                  <div className="reveal-item rounded-xl bg-white/5 p-4 text-left">
+                  <div className="reveal-item rounded-xl bg-white/5 p-4 text-left transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_18px_40px_rgba(15,23,42,0.66),0_0_24px_rgba(34,211,238,0.18)]">
                     <div className="mb-3 flex items-center gap-2">
                       <CalendarIcon />
                       <p className="text-sm font-semibold text-white">Event Details</p>
@@ -568,7 +568,7 @@ function App() {
                       <p>Venue: A2 303/304</p>
                     </div>
                   </div>
-                  <div className="reveal-item rounded-xl bg-white/5 p-4 text-left">
+                  <div className="reveal-item rounded-xl bg-white/5 p-4 text-left transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_18px_40px_rgba(15,23,42,0.66),0_0_24px_rgba(129,140,248,0.22)]">
                     <div className="mb-3 flex items-center gap-2">
                       <CodeIcon />
                       <p className="text-sm font-semibold text-white">Format</p>
@@ -583,15 +583,15 @@ function App() {
                 <div className="reveal-item flex flex-col items-center gap-4">
                   <p className="text-sm font-semibold text-white">Rewards</p>
                   <div className="flex flex-wrap items-center justify-center gap-3">
-                    <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-gray-200">
+                    <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-gray-200 transition duration-300 hover:-translate-y-1 hover:bg-white/15 hover:shadow-[0_14px_30px_rgba(15,23,42,0.62),0_0_22px_rgba(250,204,21,0.24)]">
                       <TrophyIcon />
                       Trophies (Top 3)
                     </span>
-                    <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-gray-200">
+                    <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-gray-200 transition duration-300 hover:-translate-y-1 hover:bg-white/15 hover:shadow-[0_14px_30px_rgba(15,23,42,0.62),0_0_22px_rgba(34,211,238,0.24)]">
                       <CertificateIcon />
                       Printed Certificates (Top 5)
                     </span>
-                    <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-gray-200">
+                    <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-gray-200 transition duration-300 hover:-translate-y-1 hover:bg-white/15 hover:shadow-[0_14px_30px_rgba(15,23,42,0.62),0_0_22px_rgba(167,139,250,0.24)]">
                       <MedalIcon />
                       E-Certificates (All)
                     </span>
@@ -616,7 +616,9 @@ function App() {
             <section className="timeline-section mt-16 rounded-2xl border border-indigo-300/20 bg-[#070b24]/70 p-8 shadow-[0_20px_70px_rgba(0,0,0,0.58)] backdrop-blur-xl transition duration-400 hover:-translate-y-1 hover:border-cyan-300/35 hover:shadow-[0_30px_90px_rgba(15,23,42,0.72),0_0_42px_rgba(56,189,248,0.2)] md:p-10">
               <div className="flex flex-col items-center gap-3 text-center">
                 <p className="timeline-item text-xs uppercase tracking-[0.34em] text-indigo-200/70">How It Works</p>
-                <h3 className="timeline-item text-3xl font-bold text-white md:text-5xl">Rounds Timeline</h3>
+                <h3 className="timeline-item bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-bold text-transparent md:text-5xl">
+                  Rounds Timeline
+                </h3>
                 <p className="timeline-item max-w-xl text-sm text-slate-300 md:text-base">
                   Structured progression from aptitude screening to deep problem solving.
                 </p>
