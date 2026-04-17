@@ -237,6 +237,18 @@ function App() {
       .add(() => setShowMessage(true), 0.6)
   }, [playCutSound])
 
+  const proceedToLanding = useCallback(() => {
+    if (!showMessage || !messageRef.current) return
+    gsap.to(messageRef.current, {
+      opacity: 0,
+      duration: 0.45,
+      onComplete: () => {
+        setShowMessage(false)
+        setShowLandingContent(true)
+      },
+    })
+  }, [showMessage])
+
   useEffect(() => {
     const currentScissor = scissorRef.current
     if (!currentScissor) return undefined
@@ -312,10 +324,6 @@ function App() {
     if (!showMessage || !messageRef.current) return
 
     const lines = messageRef.current.querySelectorAll('.message-line')
-    const fallback = window.setTimeout(() => {
-      setShowMessage(false)
-      setShowLandingContent(true)
-    }, 4600)
     const tl = gsap.timeline()
     tl.fromTo(
       lines,
@@ -323,17 +331,18 @@ function App() {
       { opacity: 1, y: 0, duration: 0.62, ease: 'power2.out', stagger: 0.32 }
     )
       .to(messageRef.current, { opacity: 1, duration: 0.2 })
-      .to(messageRef.current, { opacity: 1, duration: 2.2 })
-      .to(messageRef.current, {
-        opacity: 0,
-        duration: 0.7,
-        onComplete: () => {
-          setShowMessage(false)
-          setShowLandingContent(true)
-        },
-      })
-    return () => window.clearTimeout(fallback)
-  }, [showMessage])
+
+    const onRightClick = (event) => {
+      event.preventDefault()
+      proceedToLanding()
+    }
+    window.addEventListener('contextmenu', onRightClick)
+
+    return () => {
+      tl.kill()
+      window.removeEventListener('contextmenu', onRightClick)
+    }
+  }, [showMessage, proceedToLanding])
 
   useEffect(() => {
     if (!showLandingContent) return undefined
@@ -536,9 +545,16 @@ function App() {
             <p className="message-line bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.55)] md:text-4xl">
               Vice Chancellor, Prof. C. Jeganathan Sir
             </p>
-            <p className="message-line mt-2 max-w-xl text-base leading-relaxed text-slate-300">
+            <p className="message-line text-lg text-indigo-200/70">&</p>
+            <p className="message-line bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.55)] md:text-4xl">
+              Registrar, Prof. SB Dandin Sir
+            </p>
+            <p className="message-line mt-2 max-w-xl formal-script text-xl leading-relaxed text-cyan-100/95 md:text-2xl">
               With great respect, we invite you to inaugurate our Coding Club event and inspire
               the next generation of tech enthusiasts.
+            </p>
+            <p className="message-line text-xs tracking-[0.22em] text-gray-400">
+              Right click to continue
             </p>
           </div>
         )}
