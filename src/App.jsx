@@ -98,7 +98,7 @@ function Scissor({ scissorRef }) {
 
 function CalendarIcon() {
   return (
-    <svg className="h-18 w-52 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+    <svg className="h-9 w-9 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <rect x="3" y="5" width="18" height="16" rx="3" />
       <path d="M3 9h18M8 3v4M16 3v4" />
     </svg>
@@ -442,10 +442,6 @@ function App() {
 
   return (
     <main className={`relative min-h-screen bg-[#05070f] text-white font-[Inter,sans-serif] ${!isCutState ? 'cut-active' : ''}`}>
-      <div className="fixed left-6 top-5 z-40 rounded-2xl border border-cyan-300/35 bg-[#070b24]/80 p-3 shadow-[0_14px_36px_rgba(0,0,0,0.52)] backdrop-blur-sm">
-        <img src="/sbu-logo.png" alt="SBU logo" className="h-20 w-56 rounded-md object-contain" />
-      </div>
-
       <div className="pointer-events-none fixed inset-0 z-0 opacity-65">
         <Canvas camera={{ position: [0, 0, 6.8], fov: 50 }}>
           <AnimatedRings />
@@ -499,6 +495,16 @@ function App() {
               <div className="absolute left-[42px] top-[56px] h-10 w-5 rotate-12 rounded-b-lg bg-rose-500/95" />
             </div>
           </div>
+          {!showLandingContent && !showMessage && (
+            <div className="absolute left-0 top-6 flex w-full justify-center">
+              <img src="/sbu-logo.png" alt="SBU logo" className="w-24 object-contain md:w-32" />
+            </div>
+          )}
+          {!isCutState && (
+            <p className="absolute left-1/2 top-[98px] -translate-x-1/2 formal-script text-4xl text-cyan-100/95 drop-shadow-[0_0_12px_rgba(56,189,248,0.4)]">
+              Click Here
+            </p>
+          )}
 
           <div
             ref={flashRef}
@@ -512,6 +518,13 @@ function App() {
 
           {showLandingContent && (
             <div className="flex flex-col items-center justify-center gap-6 text-center">
+              <div className="mt-6 flex w-full justify-center md:mt-10">
+                <img
+                  src="/sbu-logo.png"
+                  alt="SBU logo"
+                  className="w-24 object-contain md:w-32"
+                />
+              </div>
               <h1 className="max-w-4xl bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text font-[Poppins,sans-serif] text-5xl font-extrabold text-transparent drop-shadow-[0_0_25px_rgba(59,130,246,0.6)] md:text-6xl">
                 SBU CODING CHALLENGE
               </h1>
@@ -553,18 +566,20 @@ function App() {
             ref={messageRef}
             className="fixed left-1/2 top-1/2 z-30 flex w-[min(860px,90vw)] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-4 text-center text-slate-200 opacity-0"
           >
+            <div className="mt-6 flex w-full justify-center md:mt-10">
+              <img src="/sbu-logo.png" alt="SBU logo" className="w-24 object-contain md:w-32" />
+            </div>
             <p className="message-line text-xs uppercase tracking-[0.34em] text-cyan-200/80">Respected</p>
             <p className="message-line bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.55)] md:text-4xl">
               Director General, Prof. Gopal Pathak Sir
             </p>
-            <p className="message-line text-lg text-indigo-200/70">&</p>
             <p className="message-line bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.55)] md:text-4xl">
               Vice Chancellor, Prof. C. Jeganathan Sir
             </p>
-            <p className="message-line text-lg text-indigo-200/70">&</p>
             <p className="message-line bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-semibold text-transparent drop-shadow-[0_0_18px_rgba(59,130,246,0.55)] md:text-4xl">
               Registrar, Prof. SB Dandin Sir
             </p>
+            <p className="message-line mt-2 text-xl font-medium text-cyan-100/90">& all the Dignitaries</p>
             <p className="message-line mt-2 max-w-xl formal-script text-xl leading-relaxed text-cyan-100/95 md:text-2xl">
               With great respect, we invite you to inaugurate our Coding Club event and inspire
               the next generation of tech enthusiasts.
@@ -594,7 +609,7 @@ function App() {
 
                 <div ref={detailsItemsWrapRef} className="grid w-full max-w-3xl gap-4 md:grid-cols-2">
                   <div className="reveal-item rounded-xl bg-white/5 p-4 text-left transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_18px_40px_rgba(15,23,42,0.66),0_0_24px_rgba(34,211,238,0.18)]">
-                    <div className="mb-3 flex items-center gap-2">
+                    <div className="mb-3 flex items-center gap-3">
                       <CalendarIcon />
                       <p className="font-[Poppins,sans-serif] text-sm font-semibold tracking-wide text-cyan-100 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]">
                         Event Details
@@ -602,12 +617,12 @@ function App() {
                     </div>
                     <div className="space-y-2 text-sm text-gray-300">
                       <p>Date: 18 April 2026 (Saturday)</p>
-                      <p>Time: 9:00 AM onwards</p>
+                      <p>Time: 10:00 AM onwards</p>
                       <p>Venue: A2 303/304</p>
                     </div>
                   </div>
                   <div className="reveal-item rounded-xl bg-white/5 p-4 text-left transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_18px_40px_rgba(15,23,42,0.66),0_0_24px_rgba(129,140,248,0.22)]">
-                    <div className="mb-3 flex items-center gap-2">
+                    <div className="mb-3 flex items-center gap-3">
                       <CodeIcon />
                       <p className="font-[Poppins,sans-serif] text-sm font-semibold tracking-wide text-cyan-100 drop-shadow-[0_0_10px_rgba(129,140,248,0.3)]">
                         Format
