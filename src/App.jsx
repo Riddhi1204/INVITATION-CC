@@ -147,6 +147,7 @@ function App() {
   const [showLandingContent, setShowLandingContent] = useState(false)
   const [isCutState, setIsCutState] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
+  const [showPresencePopup, setShowPresencePopup] = useState(false)
   const [spotlight, setSpotlight] = useState(false)
   const isCutRef = useRef(false)
 
@@ -424,6 +425,21 @@ function App() {
     []
   )
 
+  const popupConfettiBits = useMemo(
+    () =>
+      Array.from({ length: 46 }, (_, i) => ({
+        id: i,
+        x: (seeded(i + 5000) - 0.5) * 260,
+        y: (seeded(i + 5200) - 0.5) * 40,
+        rotate: seeded(i + 5400) * 180,
+        size: 4 + seeded(i + 5600) * 6,
+        duration: 1.4 + seeded(i + 5800) * 1.2,
+        delay: seeded(i + 6000) * 0.22,
+        color: ['#facc15', '#60a5fa', '#a78bfa'][Math.floor(seeded(i + 6200) * 3)],
+      })),
+    []
+  )
+
   return (
     <main className={`relative min-h-screen bg-[#05070f] text-white font-[Inter,sans-serif] ${!isCutState ? 'cut-active' : ''}`}>
       <div className="fixed left-6 top-5 z-40 rounded-xl border border-cyan-300/30 bg-[#070b24]/75 p-1.5 shadow-[0_10px_28px_rgba(0,0,0,0.45)] backdrop-blur-sm">
@@ -502,7 +518,7 @@ function App() {
               <p className="font-[Poppins,sans-serif] text-2xl font-semibold tracking-wide text-cyan-100 md:text-3xl">
                 Problem Solving Edition
               </p>
-              <p className="max-w-xl text-base text-gray-300">
+              <p className="max-w-xl font-[Poppins,sans-serif] text-base leading-relaxed text-slate-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.15)]">
                 A formal coding event experience crafted for clarity, depth, and modern visual hierarchy.
               </p>
               <p className="scroll-bounce mt-8 text-sm tracking-wide text-gray-400">Scroll to explore ↓</p>
@@ -580,7 +596,9 @@ function App() {
                   <div className="reveal-item rounded-xl bg-white/5 p-4 text-left transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_18px_40px_rgba(15,23,42,0.66),0_0_24px_rgba(34,211,238,0.18)]">
                     <div className="mb-3 flex items-center gap-2">
                       <CalendarIcon />
-                      <p className="text-sm font-semibold text-white">Event Details</p>
+                      <p className="font-[Poppins,sans-serif] text-sm font-semibold tracking-wide text-cyan-100 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]">
+                        Event Details
+                      </p>
                     </div>
                     <div className="space-y-2 text-sm text-gray-300">
                       <p>Date: 18 April 2026 (Saturday)</p>
@@ -591,7 +609,9 @@ function App() {
                   <div className="reveal-item rounded-xl bg-white/5 p-4 text-left transition duration-300 hover:-translate-y-1 hover:bg-white/10 hover:shadow-[0_18px_40px_rgba(15,23,42,0.66),0_0_24px_rgba(129,140,248,0.22)]">
                     <div className="mb-3 flex items-center gap-2">
                       <CodeIcon />
-                      <p className="text-sm font-semibold text-white">Format</p>
+                      <p className="font-[Poppins,sans-serif] text-sm font-semibold tracking-wide text-cyan-100 drop-shadow-[0_0_10px_rgba(129,140,248,0.3)]">
+                        Format
+                      </p>
                     </div>
                     <div className="space-y-2 text-sm text-gray-300">
                       <p>Round 1: 10 MCQs</p>
@@ -601,7 +621,9 @@ function App() {
                 </div>
 
                 <div className="reveal-item flex flex-col items-center gap-4">
-                  <p className="text-sm font-semibold text-white">Rewards</p>
+                  <p className="font-[Poppins,sans-serif] text-sm font-semibold tracking-wide text-cyan-100 drop-shadow-[0_0_10px_rgba(250,204,21,0.24)]">
+                    Rewards
+                  </p>
                   <div className="flex flex-wrap items-center justify-center gap-3">
                     <span className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-gray-200 transition duration-300 hover:-translate-y-1 hover:bg-white/15 hover:shadow-[0_14px_30px_rgba(15,23,42,0.62),0_0_22px_rgba(250,204,21,0.24)]">
                       <TrophyIcon />
@@ -619,7 +641,9 @@ function App() {
                 </div>
 
                 <div className="reveal-item space-y-1 text-gray-300">
-                  <p className="font-medium text-white">Contact</p>
+                  <p className="font-[Poppins,sans-serif] text-sm font-semibold tracking-wide text-cyan-100 drop-shadow-[0_0_10px_rgba(56,189,248,0.26)]">
+                    Contact
+                  </p>
                   <p>Rishikant Kumar</p>
                   <p>President, Coding Club SBU</p>
                   <p>+91-6207383145</p>
@@ -627,9 +651,10 @@ function App() {
 
                 <button
                   ref={detailsButtonRef}
+                  onClick={() => setShowPresencePopup(true)}
                   className="rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-lg shadow-cyan-500/30 transition duration-300 hover:scale-105 hover:shadow-[0_0_38px_rgba(56,189,248,0.7)] active:scale-100"
                 >
-                  Confirm Presence
+                  Confirm To Your Presence
                 </button>
               </div>
             </article>
@@ -639,7 +664,7 @@ function App() {
                 <h3 className="timeline-item bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-bold text-transparent md:text-5xl">
                   Rounds Timeline
                 </h3>
-                <p className="timeline-item max-w-xl text-sm text-slate-300 md:text-base">
+                <p className="timeline-item max-w-xl font-[Poppins,sans-serif] text-sm leading-relaxed text-slate-300 drop-shadow-[0_0_10px_rgba(96,165,250,0.16)] md:text-base">
                   Structured progression from aptitude screening to deep problem solving.
                 </p>
               </div>
@@ -664,6 +689,50 @@ function App() {
           </div>
         )}
       </section>
+
+      {showPresencePopup && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/65 px-6 backdrop-blur-sm">
+          <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-cyan-200/25 bg-[#090f2f]/90 p-8 shadow-[0_30px_100px_rgba(0,0,0,0.72),0_0_60px_rgba(56,189,248,0.22)]">
+            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-violet-500/10" />
+            <div className="pointer-events-none absolute left-1/2 top-7 h-28 w-60 -translate-x-1/2 rounded-full bg-cyan-400/20 blur-2xl" />
+            <div className="pointer-events-none absolute left-1/2 top-1/2">
+              {popupConfettiBits.map((piece) => (
+                <span
+                  key={piece.id}
+                  className="confetti-piece"
+                  style={{
+                    left: `${piece.x}px`,
+                    top: `${piece.y}px`,
+                    width: `${piece.size}px`,
+                    height: `${piece.size * 1.7}px`,
+                    backgroundColor: piece.color,
+                    transform: `rotate(${piece.rotate}deg)`,
+                    animationDuration: `${piece.duration}s`,
+                    animationDelay: `${piece.delay}s`,
+                    '--dx': piece.x * 0.18,
+                  }}
+                />
+              ))}
+            </div>
+
+            <div className="relative z-10 flex flex-col items-center gap-6 text-center">
+              <h4 className="bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text font-[Poppins,sans-serif] text-3xl font-bold text-transparent drop-shadow-[0_0_16px_rgba(56,189,248,0.4)] md:text-4xl">
+                Presence Confirmed
+              </h4>
+              <p className="font-[Poppins,sans-serif] text-lg leading-relaxed text-cyan-50/95 md:text-xl">
+                Thank you for confirming your presence with us. It is an Honour to have you join us
+                for this event.
+              </p>
+              <button
+                onClick={() => setShowPresencePopup(false)}
+                className="rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-6 py-2.5 text-sm font-semibold tracking-wide text-white shadow-lg shadow-cyan-500/35 transition duration-300 hover:scale-105 hover:shadow-[0_0_34px_rgba(56,189,248,0.75)] active:scale-100"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
