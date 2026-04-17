@@ -98,7 +98,7 @@ function Scissor({ scissorRef }) {
 
 function CalendarIcon() {
   return (
-    <svg className="h-5 w-5 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+    <svg className="h-18 w-52 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
       <rect x="3" y="5" width="18" height="16" rx="3" />
       <path d="M3 9h18M8 3v4M16 3v4" />
     </svg>
@@ -442,8 +442,8 @@ function App() {
 
   return (
     <main className={`relative min-h-screen bg-[#05070f] text-white font-[Inter,sans-serif] ${!isCutState ? 'cut-active' : ''}`}>
-      <div className="fixed left-6 top-5 z-40 rounded-xl border border-cyan-300/30 bg-[#070b24]/75 p-1.5 shadow-[0_10px_28px_rgba(0,0,0,0.45)] backdrop-blur-sm">
-        <img src="/sbu-logo.png" alt="SBU logo" className="h-14 w-14 rounded-md object-contain" />
+      <div className="fixed left-6 top-5 z-40 rounded-2xl border border-cyan-300/35 bg-[#070b24]/80 p-3 shadow-[0_14px_36px_rgba(0,0,0,0.52)] backdrop-blur-sm">
+        <img src="/sbu-logo.png" alt="SBU logo" className="h-20 w-56 rounded-md object-contain" />
       </div>
 
       <div className="pointer-events-none fixed inset-0 z-0 opacity-65">
