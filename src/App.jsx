@@ -469,6 +469,13 @@ function App() {
       <div className="floating-shape fixed right-[24%] bottom-[20%] z-10 h-5 w-5 rotate-45 rounded-md border border-cyan-300/30 bg-cyan-400/10" />
 
       <section className="relative z-20 flex min-h-screen flex-col">
+        {!showLandingContent && !showMessage && (
+          <div className="flex w-full items-start justify-center pt-10 md:pt-12">
+            <div className="rounded-2xl border border-cyan-300/35 bg-[#070b24]/80 p-2 shadow-[0_12px_30px_rgba(0,0,0,0.46)] backdrop-blur-sm">
+              <img src="/sbu-logo.png" alt="SBU logo" className="w-24 object-contain md:w-32" />
+            </div>
+          </div>
+        )}
         <div className="relative flex h-screen items-center justify-center px-6">
         <div
           ref={ribbonRef}
@@ -495,11 +502,6 @@ function App() {
               <div className="absolute left-[42px] top-[56px] h-10 w-5 rotate-12 rounded-b-lg bg-rose-500/95" />
             </div>
           </div>
-          {!showLandingContent && !showMessage && (
-            <div className="absolute left-0 top-6 flex w-full justify-center">
-              <img src="/sbu-logo.png" alt="SBU logo" className="w-24 object-contain md:w-32" />
-            </div>
-          )}
           {!isCutState && (
             <p className="absolute left-1/2 top-[98px] -translate-x-1/2 formal-script text-4xl text-cyan-100/95 drop-shadow-[0_0_12px_rgba(56,189,248,0.4)]">
               Click Here
