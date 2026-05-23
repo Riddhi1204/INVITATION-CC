@@ -673,7 +673,7 @@ function App() {
                   </p>
                   <p>Rishikant Kumar</p>
                   <p>President, Coding Club SBU</p>
-                  <p>+91-6207383145</p>
+                  <p className="blur-sm">+91-6207383145</p>
                 </div>
 
                 <button
