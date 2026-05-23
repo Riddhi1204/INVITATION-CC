@@ -86,8 +86,7 @@ function Footer() {
   return (
     <footer className="relative z-20 w-full py-10 text-center text-sm text-slate-400/90">
       <p>
-        © 2026 Invitation@SBU_CC. Built with <span aria-hidden="true">❤️</span> by Riddhi Kumari(SBU2500374) for
-        hackers everywhere.
+        © 2026 Invitation@SBU_CC. Built with <span aria-hidden="true">❤️</span> by Riddhi Kumari(SBU2500374).
       </p>
     </footer>
   )
