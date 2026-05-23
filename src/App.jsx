@@ -82,6 +82,17 @@ function FloatingParticles() {
   )
 }
 
+function Footer() {
+  return (
+    <footer className="relative z-20 w-full py-10 text-center text-sm text-slate-400/90">
+      <p>
+        © 2026 Invitation@SBU_CC. Built with <span aria-hidden="true">❤️</span> by Riddhi Kumari(SBU2500374) for
+        hackers everywhere.
+      </p>
+    </footer>
+  )
+}
+
 function Scissor({ scissorRef }) {
   return (
     <div ref={scissorRef} className="fixed left-0 top-0 z-40 pointer-events-none">
@@ -706,6 +717,8 @@ function App() {
           </div>
         )}
       </section>
+
+      <Footer />
 
       {showPresencePopup && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/65 px-6 backdrop-blur-sm">
