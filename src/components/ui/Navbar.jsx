@@ -72,7 +72,7 @@ const Navbar = () => {
             
             <div className="flex items-center ml-6">
               <a 
-                href="https://forms.gle/KA6GjgxhLLSptk8k7" 
+                href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform" 
                 target="_blank" 
                 rel="noreferrer"
                 className="px-4 py-1.5 border border-[#00f0ff]/30 text-[#00f0ff] font-mono text-[10px] tracking-widest hover:bg-[#00f0ff]/10 hover:shadow-[0_0_10px_rgba(0,240,255,0.2)] transition-all duration-300 flex items-center gap-2 rounded-sm"
@@ -107,7 +107,7 @@ const Navbar = () => {
               </button>
             ))}
             <a 
-              href="https://forms.gle/KA6GjgxhLLSptk8k7" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform" 
               target="_blank" 
               rel="noreferrer"
               className="mt-6 w-full text-center px-8 py-4 border border-[#00f0ff] text-[#00f0ff] font-mono text-sm tracking-widest bg-[#00f0ff]/5 rounded-sm flex justify-center items-center gap-3"

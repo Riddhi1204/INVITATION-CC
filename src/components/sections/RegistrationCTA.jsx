@@ -23,7 +23,7 @@ const RegistrationCTA = () => {
           </p>
 
           <a 
-            href="https://forms.gle/KA6GjgxhLLSptk8k7" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform" 
             target="_blank" 
             rel="noreferrer"
             className="inline-block relative group"

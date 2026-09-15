@@ -29,7 +29,7 @@ const Footer = () => {
               </a>
             ))}
             <a 
-              href="https://forms.gle/KA6GjgxhLLSptk8k7"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform"
               target="_blank"
               rel="noreferrer"
               className="font-mono text-xs text-[#b026ff] hover:text-[#00f0ff] tracking-widest transition-colors"

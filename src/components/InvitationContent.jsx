@@ -152,7 +152,7 @@ const InvitationContent = ({ isCut }) => {
         {/* Action Button & Footer Minimalized */}
         <div ref={footerRef} className="flex flex-col items-center relative z-10 w-full gap-5">
           <a 
-            href="https://forms.gle/KA6GjgxhLLSptk8k7" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform" 
             target="_blank" 
             rel="noreferrer"
             className="px-10 py-3 text-base md:text-lg font-medium text-white transition-all duration-300 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 pointer-events-auto backdrop-blur-sm"

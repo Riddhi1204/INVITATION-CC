@@ -58,7 +58,7 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <a 
-              href="https://forms.gle/KA6GjgxhLLSptk8k7" 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform" 
               target="_blank" 
               rel="noreferrer"
               className="relative group overflow-hidden bg-[#00f0ff]/10 border border-[#00f0ff] px-8 py-4 rounded-sm font-mono tracking-widest text-sm text-[#00f0ff] transition-all hover:bg-[#00f0ff] hover:text-[#050816] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)]"

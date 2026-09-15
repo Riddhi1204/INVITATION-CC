@@ -68,7 +68,7 @@ const MiniChallenge = () => {
               <div className="font-mono text-xl text-[#39ff14] text-glow font-bold mb-2">ACCESS GRANTED ✓</div>
               <p className="text-gray-400 font-sans mb-6">You might belong in the arena.</p>
               <a 
-                href="https://forms.gle/KA6GjgxhLLSptk8k7" 
+                href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform" 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-block px-8 py-3 border border-[#00f0ff] text-[#00f0ff] font-mono text-sm tracking-widest hover:bg-[#00f0ff] hover:text-black transition-colors rounded-sm shadow-[0_0_15px_rgba(0,240,255,0.2)]"
