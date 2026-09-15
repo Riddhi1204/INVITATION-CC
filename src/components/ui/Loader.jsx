@@ -33,10 +33,27 @@ const Loader = ({ onComplete }) => {
         initial={{ opacity: 1 }}
         exit={{ opacity: 0, y: -50, filter: "blur(10px)" }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-[#050816] text-[#00f0ff] font-mono p-4"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-[#050816] text-[#00f0ff] font-mono p-4 flex-col"
       >
-        <div className="w-full max-w-2xl">
-          <div className="terminal-border bg-black/40 p-6 rounded-lg backdrop-blur-md">
+        <div className="w-full max-w-2xl flex flex-col items-center">
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col items-center mb-10"
+          >
+            <img 
+              src="/sbu-logo.png" 
+              alt="SBU Logo" 
+              className="h-24 w-auto object-contain mb-4 drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]"
+            />
+            <div className="font-display text-2xl tracking-widest text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+              Coding Club<span className="text-[#00f0ff] font-mono text-sm">.exe</span>
+            </div>
+          </motion.div>
+
+          <div className="terminal-border w-full bg-black/40 p-6 rounded-lg backdrop-blur-md">
             <div className="flex items-center gap-2 mb-4 border-b border-[#00f0ff]/30 pb-2">
               <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>

@@ -33,14 +33,14 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
+        initial={{ y: -100, x: '-50%' }}
+        animate={{ y: 0, x: '-50%' }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-          scrolled ? 'glass-panel border-b border-[#00f0ff]/20 py-4' : 'bg-transparent py-6'
+        className={`fixed top-4 left-1/2 w-[95%] max-w-7xl z-40 transition-all duration-300 rounded-lg border border-[#00f0ff]/30 ${
+          scrolled ? 'bg-[#050816]/90 backdrop-blur-md shadow-[0_0_20px_rgba(0,240,255,0.15)] py-2' : 'bg-[#050816]/50 backdrop-blur-md py-3'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        <div className="w-full px-4 md:px-8 flex justify-between items-center">
           
           {/* Logo / Branding */}
           <div className="flex flex-col">
