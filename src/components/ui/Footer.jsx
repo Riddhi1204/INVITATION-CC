@@ -42,8 +42,9 @@ const Footer = () => {
         
         <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent my-8"></div>
         
-        <div className="text-center font-mono text-[10px] text-gray-600 tracking-widest">
-          © 2026 SBU CODING CLUB. ALL RIGHTS RESERVED.
+        <div className="text-center font-mono text-[10px] text-gray-600 tracking-widest flex flex-col gap-2">
+          <span>Built with ❤️ by Riddhi(2500374)</span>
+          <span>© 2026 SBU CODING CLUB. ALL RIGHTS RESERVED.</span>
         </div>
       </div>
     </footer>
