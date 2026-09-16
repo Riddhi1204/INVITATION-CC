@@ -89,7 +89,7 @@ const CustomCursor = () => {
           <div className={`absolute inset-0 rounded-full blur-md bg-[#00f0ff] transition-opacity duration-300 ${isHovering ? 'opacity-40' : 'opacity-20'}`}></div>
           
           {/* Angular Brackets */}
-          <div className="relative w-full h-full flex items-center justify-between z-10 text-xl font-light text-white drop-shadow-[0_0_8px_rgba(0,240,255,0.9)]">
+          <div className="relative w-full h-full flex items-center justify-between z-10 text-xl font-light text-slate-900 drop-shadow-[0_0_8px_rgba(0,240,255,0.9)]">
             <span className={`transform transition-all duration-300 ${isHovering ? '-translate-x-1 text-[#00f0ff]' : 'translate-x-1'}`}>&lt;</span>
             <span className={`transform transition-all duration-300 ${isHovering ? 'translate-x-1 text-[#00f0ff]' : '-translate-x-1'}`}>&gt;</span>
           </div>

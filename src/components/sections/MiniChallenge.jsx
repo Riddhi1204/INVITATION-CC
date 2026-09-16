@@ -15,12 +15,12 @@ const MiniChallenge = () => {
   };
 
   return (
-    <section className="w-full py-24 relative z-10 bg-black/60 backdrop-blur-md border-y border-[#00f0ff]/10">
+    <section className="w-full py-24 relative z-10 bg-white/40 backdrop-blur-md border-y border-[#00f0ff]/10">
       <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-        <h2 className="font-display text-3xl font-bold text-white mb-2">
+        <h2 className="font-display text-3xl font-bold text-slate-900 mb-2">
           CAN YOU SOLVE THIS?
         </h2>
-        <p className="font-mono text-sm text-gray-400 tracking-widest mb-12 uppercase">
+        <p className="font-mono text-sm text-slate-600 tracking-widest mb-12 uppercase">
           {'>'} CHALLENGE_001
         </p>
 
@@ -66,14 +66,14 @@ const MiniChallenge = () => {
           {status === 'correct' && (
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-center">
               <div className="font-mono text-xl text-[#39ff14] text-glow font-bold mb-2">ACCESS GRANTED ✓</div>
-              <p className="text-gray-400 font-sans mb-6">You might belong in the arena.</p>
+              <p className="text-slate-600 font-sans mb-6">You might belong in the arena.</p>
               <a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLScLg4aYaY0ZNRAkMZuxod1Ekxc-Jq9iu8HuS2gAB9dCtL3muQ/viewform" 
                 target="_blank" 
                 rel="noreferrer"
-                className="inline-block px-8 py-3 border border-[#00f0ff] text-[#00f0ff] font-mono text-sm tracking-widest hover:bg-[#00f0ff] hover:text-black transition-colors rounded-sm shadow-[0_0_15px_rgba(0,240,255,0.2)]"
+                className="inline-block px-8 py-3 border border-[#00f0ff] text-cyan-800 font-mono text-sm tracking-widest hover:bg-[#00f0ff] hover:text-black transition-colors rounded-sm shadow-[0_0_15px_rgba(0,240,255,0.2)]"
               >
-                [ ENTER THE QUEST → ]
+                [ REGISTER FOR THE QUEST → ]
               </a>
             </motion.div>
           )}
@@ -81,7 +81,7 @@ const MiniChallenge = () => {
           {status === 'incorrect' && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center">
               <div className="font-mono text-xl text-red-500 font-bold mb-2">ACCESS DENIED</div>
-              <p className="text-gray-400 font-sans">Keep practicing. The real challenge awaits.</p>
+              <p className="text-slate-600 font-sans">Keep practicing. The real challenge awaits.</p>
             </motion.div>
           )}
         </div>

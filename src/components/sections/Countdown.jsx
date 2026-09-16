@@ -40,7 +40,7 @@ const Countdown = () => {
   const formatNumber = (num) => num.toString().padStart(2, '0');
 
   return (
-    <section className="w-full py-16 border-y border-[#00f0ff]/10 relative overflow-hidden bg-black/20 backdrop-blur-sm z-10">
+    <section className="w-full py-16 border-y border-[#00f0ff]/10 relative overflow-hidden bg-white/40 backdrop-blur-sm z-10">
       <div className="max-w-4xl mx-auto px-6 text-center">
         
         <h3 className="font-mono text-sm tracking-[0.3em] text-[#b026ff] mb-8">
@@ -60,7 +60,7 @@ const Countdown = () => {
               { label: 'SEC', value: timeLeft.seconds }
             ].map((unit, idx) => (
               <div key={unit.label} className="flex flex-col items-center">
-                <div className="font-display text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-2 relative group">
+                <div className="font-display text-3xl md:text-5xl lg:text-7xl font-bold text-slate-900 mb-2 relative group">
                   {/* Subtle highlight */}
                   <div className="absolute inset-0 bg-[#00f0ff] blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
                   <span className="relative z-10">{formatNumber(unit.value)}</span>

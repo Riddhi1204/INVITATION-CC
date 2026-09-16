@@ -14,11 +14,11 @@ const Protocol = () => {
   return (
     <section id="protocol" className="w-full py-24 relative z-10">
       <div className="max-w-3xl mx-auto px-6 md:px-12">
-        <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-16 text-center">
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-slate-900 mb-16 text-center">
           EVENT PROTOCOL
         </h2>
 
-        <div className="relative border-l border-gray-800 ml-4 md:ml-8">
+        <div className="relative border-l border-slate-300 ml-4 md:ml-8">
           {steps.map((step, idx) => (
             <motion.div
               key={step.num}
@@ -33,9 +33,9 @@ const Protocol = () => {
               
               <div className="flex flex-col">
                 <span className="font-mono text-xs text-[#b026ff] tracking-widest mb-1">{step.num}</span>
-                <h3 className="font-display text-xl md:text-2xl font-bold text-white group-hover:text-[#00f0ff] transition-colors">{step.title}</h3>
+                <h3 className="font-display text-xl md:text-2xl font-bold text-slate-900 group-hover:text-[#00f0ff] transition-colors">{step.title}</h3>
                 {step.subtitle && (
-                  <span className="font-sans text-sm text-gray-400 mt-1">{step.subtitle}</span>
+                  <span className="font-sans text-sm text-slate-600 mt-1">{step.subtitle}</span>
                 )}
               </div>
             </motion.div>

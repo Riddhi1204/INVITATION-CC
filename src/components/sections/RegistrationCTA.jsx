@@ -14,11 +14,11 @@ const RegistrationCTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-display text-5xl md:text-7xl font-black text-white mb-4 tracking-tight">
+          <h2 className="font-display text-5xl md:text-7xl font-black text-slate-900 mb-4 tracking-tight">
             READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] to-[#b026ff]">COMPETE?</span>
           </h2>
           
-          <p className="font-mono text-lg md:text-xl text-gray-400 tracking-widest uppercase mb-12">
+          <p className="font-mono text-lg md:text-xl text-slate-600 tracking-widest uppercase mb-12">
             THE CODE IS WAITING.
           </p>
 
@@ -29,15 +29,15 @@ const RegistrationCTA = () => {
             className="inline-block relative group"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-[#00f0ff] to-[#b026ff] blur opacity-70 group-hover:opacity-100 transition duration-500 rounded-sm"></div>
-            <div className="relative px-10 py-5 bg-[#050816] border border-[#00f0ff]/50 rounded-sm">
-              <span className="font-mono text-lg tracking-widest text-white font-bold flex items-center gap-3">
-                [ ENTER CODE QUEST <span className="text-[#00f0ff] group-hover:translate-x-2 transition-transform">→</span> ]
+            <div className="relative px-10 py-5 bg-white border border-[#00f0ff]/50 rounded-sm">
+              <span className="font-mono text-lg tracking-widest text-slate-900 font-bold flex items-center gap-3">
+                [ REGISTER FOR THE QUEST <span className="text-cyan-600 group-hover:translate-x-2 transition-transform">→</span> ]
               </span>
             </div>
           </a>
 
           <div className="mt-16 flex flex-col items-center">
-            <div className="font-mono text-xs tracking-[0.3em] text-gray-500 mb-4">
+            <div className="font-mono text-xs tracking-[0.3em] text-slate-500 mb-4">
               SCAN. REGISTER. COMPETE.
             </div>
             {/* Box for QR code if it exists, otherwise just a tech-looking box */}

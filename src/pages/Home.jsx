@@ -26,14 +26,14 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <div className="relative w-full min-h-screen bg-[#050816]">
+    <div className="relative w-full min-h-screen bg-transparent">
       {/* Loading Sequence */}
       {loading && <Loader onComplete={() => setLoading(false)} />}
 
       {/* 3D Canvas Background (Fixed) */}
       <div id="canvas-container">
         <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
-          <color attach="background" args={['#050816']} />
+          <color attach="background" args={['#f8fafc']} />
           <ambientLight intensity={0.4} />
           <directionalLight position={[10, 10, 5]} intensity={1.5} />
           <directionalLight position={[-10, 10, -5]} intensity={0.5} />

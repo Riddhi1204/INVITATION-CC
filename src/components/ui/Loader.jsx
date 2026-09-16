@@ -33,7 +33,7 @@ const Loader = ({ onComplete }) => {
         initial={{ opacity: 1 }}
         exit={{ opacity: 0, y: -50, filter: "blur(10px)" }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-[#050816] text-[#00f0ff] font-mono p-4 flex-col"
+        className="fixed inset-0 z-50 flex items-center justify-center bg-transparent text-[#00f0ff] font-mono p-4 flex-col"
       >
         <div className="w-full max-w-2xl flex flex-col items-center">
           
@@ -48,7 +48,7 @@ const Loader = ({ onComplete }) => {
               alt="SBU Logo" 
               className="h-24 w-auto object-contain mb-4 drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]"
             />
-            <div className="font-display text-2xl tracking-widest text-white font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+            <div className="font-display text-2xl tracking-widest text-slate-900 font-bold drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
               Coding Club<span className="text-[#00f0ff] font-mono text-sm">.exe</span>
             </div>
           </motion.div>

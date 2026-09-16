@@ -7,7 +7,7 @@ const RoundCard = ({ level, title, subtitle, desc, labels, status }) => (
     whileInView={{ opacity: 1, scale: 1 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6 }}
-    className="relative group glass-panel rounded-xl overflow-hidden border border-gray-800 hover:border-[#b026ff]/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(176,38,255,0.15)] bg-black/40"
+    className="relative group glass-panel rounded-xl overflow-hidden border border-slate-300 hover:border-[#b026ff]/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(176,38,255,0.15)] bg-white/40"
   >
     {/* Inner glow on hover */}
     <div className="absolute inset-0 bg-gradient-to-br from-[#b026ff]/0 to-[#00f0ff]/0 group-hover:from-[#b026ff]/10 group-hover:to-[#00f0ff]/10 transition-colors duration-500 z-0"></div>
@@ -16,23 +16,23 @@ const RoundCard = ({ level, title, subtitle, desc, labels, status }) => (
       <div className="flex justify-between items-start mb-8">
         <div>
           <div className="font-mono text-sm text-[#b026ff] tracking-[0.2em] mb-2">{level}</div>
-          <h3 className="font-display text-2xl md:text-4xl font-bold text-white mb-2">{title}</h3>
+          <h3 className="font-display text-2xl md:text-4xl font-bold text-slate-900 mb-2">{title}</h3>
           <h4 className="font-sans text-[#00f0ff] font-medium tracking-wide">{subtitle}</h4>
         </div>
         
-        <div className="hidden sm:flex items-center gap-2 px-3 py-1 border border-gray-700 rounded-sm bg-gray-900/50">
+        <div className="hidden sm:flex items-center gap-2 px-3 py-1 border border-slate-300 rounded-sm bg-slate-200">
           <div className={`w-2 h-2 rounded-full ${status === 'UNLOCKED' ? 'bg-[#39ff14] animate-pulse' : 'bg-yellow-500'}`}></div>
-          <span className="font-mono text-[10px] text-gray-300 uppercase tracking-widest">[{status}]</span>
+          <span className="font-mono text-[10px] text-slate-700 uppercase tracking-widest">[{status}]</span>
         </div>
       </div>
       
-      <p className="font-sans text-gray-400 max-w-lg mb-10 leading-relaxed border-l border-gray-700 pl-4">
+      <p className="font-sans text-slate-600 max-w-lg mb-10 leading-relaxed border-l border-slate-300 pl-4">
         {desc}
       </p>
       
       <div className="flex flex-wrap gap-3">
         {labels.map(label => (
-          <span key={label} className="font-mono text-xs text-white/70 bg-white/5 border border-white/10 px-4 py-2 rounded-sm group-hover:border-[#00f0ff]/30 transition-colors">
+          <span key={label} className="font-mono text-xs text-slate-900/70 bg-white/5 border border-white/10 px-4 py-2 rounded-sm group-hover:border-[#00f0ff]/30 transition-colors">
             {label}
           </span>
         ))}
@@ -51,10 +51,10 @@ const Rounds = () => {
     <section id="rounds" className="w-full py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
-          <h2 className="font-mono text-sm tracking-[0.3em] text-gray-500 mb-4">
+          <h2 className="font-mono text-sm tracking-[0.3em] text-slate-500 mb-4">
             EVENT STRUCTURE
           </h2>
-          <h3 className="font-display text-4xl md:text-5xl font-bold text-white">
+          <h3 className="font-display text-4xl md:text-5xl font-bold text-slate-900">
             TWO LEVELS.<br/><span className="text-[#00f0ff]">ONE QUEST.</span>
           </h3>
         </div>
