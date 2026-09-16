@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+﻿import React, { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
@@ -9,6 +9,7 @@ import ParticleField from '../components/ParticleField';
 import Loader from '../components/ui/Loader';
 import Navbar from '../components/ui/Navbar';
 import Footer from '../components/ui/Footer';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 // Sections
 import Hero from '../components/sections/Hero';
@@ -32,7 +33,7 @@ const Home = () => {
 
       {/* 3D Canvas Background (Fixed) */}
       <div id="canvas-container">
-        <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+        <ErrorBoundary><Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
           <color attach="background" args={['#f8fafc']} />
           <ambientLight intensity={0.4} />
           <directionalLight position={[10, 10, 5]} intensity={1.5} />
@@ -48,14 +49,14 @@ const Home = () => {
               <Bloom luminanceThreshold={0.2} luminanceSmoothing={0.9} height={300} intensity={1.5} />
             </EffectComposer>
           </Suspense>
-        </Canvas>
+        </Canvas></ErrorBoundary>
       </div>
 
       {/* Main Content Scroll Layer */}
       <div id="ui-layer" className={loading ? "opacity-0 h-screen overflow-hidden" : "opacity-100 transition-opacity duration-1000"}>
         <Navbar />
         
-        <main>
+        <main><ErrorBoundary>
           <Hero />
           <Countdown />
           <ChallengeOverview />
@@ -66,7 +67,7 @@ const Home = () => {
           <WhoShouldEnter />
           <EventDetails />
           <RegistrationCTA />
-        </main>
+        </ErrorBoundary></main>
         
         <Footer />
       </div>
@@ -75,3 +76,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

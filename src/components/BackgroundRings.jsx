@@ -72,7 +72,7 @@ const BackgroundRings = () => {
     
     // Very slow individual orbital rotation
     ringRefs.current.forEach((ring, i) => {
-      if (ring) {
+      if (ring && ringsData[i]) {
         ring.rotation.z += delta * ringsData[i].speed;
       }
     });

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const bootSequence = [
@@ -6,7 +6,7 @@ const bootSequence = [
   "LOADING CODING CLUB...",
   "LOADING CHALLENGES...",
   "LOADING ARENA...",
-  "ACCESS GRANTED ✓"
+  "ACCESS GRANTED âœ“"
 ];
 
 const Loader = ({ onComplete }) => {
@@ -86,3 +86,4 @@ const Loader = ({ onComplete }) => {
 };
 
 export default Loader;
+
